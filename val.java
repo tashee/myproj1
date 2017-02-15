@@ -13,18 +13,18 @@ public class val extends AppCompatActivity {
         setContentView(R.layout.activity_val);
     }
 
-    public void breakfast1(View view) {
-        Intent intent = new Intent(this, breakfast.class);
+    public void BreakfastMenu(View view) {
+        Intent intent = new Intent(this, breakfast0.class);
         startActivity(intent);
     }
 
-    public void lunch1(View view) {
-        Intent intent = new Intent(this, lunch.class);
+    public void LunchMenu(View view) {
+        Intent intent = new Intent(this, lunch0.class);
         startActivity(intent);
     }
 
-    public void dinner1(View view) {
-        Intent intent = new Intent(this, dinner.class);
+    public void DinnerMenu(View view) {
+        Intent intent = new Intent(this, dinner0.class);
         startActivity(intent);
     }
 }

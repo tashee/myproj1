@@ -5,6 +5,7 @@ import com.facebook.appevents.AppEventsLogger;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import android.support.v7.app.AppCompatActivity;
@@ -15,9 +16,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -26,7 +29,7 @@ import static android.icu.lang.UCharacter.GraphemeClusterBreak.V;
 
 
 public class MainActivity extends AppCompatActivity {
-    //ImageButton eat;
+    ImageButton pv0;
     Button btnSignIn,btnSignUp;
     LoginDataBaseAdapter loginDataBaseAdapter;
     private GoogleApiClient mGoogleApiClient;
@@ -62,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intentSignUP);
             }
         });
+
+
     }
 
 
@@ -95,6 +100,8 @@ public class MainActivity extends AppCompatActivity {
                 {
                     Toast.makeText(MainActivity.this, "Congrats: Login Successfull", Toast.LENGTH_LONG).show();
                     dialog.dismiss();
+                    Intent i = new Intent(MainActivity.this, homePage.class);
+                    startActivity(i);
                 }
                 else
                 {
@@ -118,10 +125,18 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void pvta(View view) {
+        Intent intent = new Intent(Intent.ACTION_VIEW,
+                Uri.parse("http://www.pvta.com"));
+        startActivity(intent);
+    }
+
+
+    /*
     public void dining2(View view) {
         Intent intent = new Intent(this, valentine.class);
         startActivity(intent);
-    }
+    }*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
